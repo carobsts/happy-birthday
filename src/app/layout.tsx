@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Layout } from "./components/layout";
 import "./globals.css";
-import { METADATA_DESCRIPTION_FILADD_CHALLENGE, METADATA_FILADD_CHALLENGE } from "@/lib/contansts";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: METADATA_FILADD_CHALLENGE,
-  description: METADATA_DESCRIPTION_FILADD_CHALLENGE,
+  title: 'Nahir | Countdown ⏰',
+  description: "Esta es una app web creada para mi cuña, que prontito va a cumplir 30." 
 };
 
 export default function RootLayout({

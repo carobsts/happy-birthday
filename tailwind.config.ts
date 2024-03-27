@@ -16,7 +16,12 @@ const config: Config = {
     },
   },
   plugins: [
+    require("@tailwindcss/typography"),
     require('@tailwindcss/forms'),
+    require("daisyui"),
   ],
+  daisyui: {
+    themes: ["nord"],
+  },
 };
 export default config;

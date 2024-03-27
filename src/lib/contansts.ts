@@ -1,7 +1,7 @@
 // STATIC CONTENT
 export const LABEL_SHOW_ME = `Show me!`;
-export const LABEL_WELCOME_TO_FILADDIFY = `Welcome to Filaddify.`;
-export const LABEL_DESCRIPTION_HOME_PAGE = `This is an application made in Next 14, Tailwind and ❤️, for the Filadd Challenge, where you can search for your favorite songs.`;
+export const LABEL_WELCOME = `Welcome, Nahir 👋🏼`;
+export const LABEL_DESCRIPTION_HOME_PAGE = `Description...`;
 export const LABEL_HTTP_404 = `404`;
 export const LABEL_PAGE_NOT_FOUND = `Page not found`;
 export const LABEL_SORRY_404 = `Sorry, we couldn’t find the page you’re looking for.`;

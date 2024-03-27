@@ -1,5 +1,8 @@
-import Link from "next/link";
-import { FC } from "react";
+"use client";
+import React, { useState, useEffect, FC } from "react";
+import style from "../../styles/home.module.css";
+import { Countdown } from "../ui";
+import { calculateTimeLeft } from "@/lib/helpers";
 
 export interface IHero {
   title: string;
@@ -8,28 +11,87 @@ export interface IHero {
     label: string;
     action?: () => void;
   };
-}; 
+}
 
 const Hero: FC<IHero> = (props: IHero) => {
   const { title, description, button } = props;
+
+  const [birthdayCountdown, setBirthdayCountdown] = useState(
+    calculateTimeLeft("April 11, 2024 00:00:00")
+  );
+  const [jbCountdown, setJbCountdown] = useState(
+    calculateTimeLeft("April 25, 2024 21:00:00")
+  );
+
+  useEffect(() => {
+    const birthDaytimer = setTimeout(() => {
+      setBirthdayCountdown(calculateTimeLeft("April 11, 2024 00:00:00"));
+    }, 1000);
+    return () => clearTimeout(birthDaytimer);
+  });
+
+  useEffect(() => {
+    const jbtimer = setTimeout(() => {
+      setJbCountdown(calculateTimeLeft("April 25, 2024 21:00:00"));
+    }, 1000);
+    return () => clearTimeout(jbtimer);
+  });
+
   return (
-    <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-      <div className="hidden sm:mb-8 sm:flex sm:justify-center"></div>
-      <div className="text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-          {title}
-        </h1>
-        <p className="mt-6 text-lg leading-8 text-gray-600">{description}</p>
-        <div className="mt-10 flex items-center justify-center gap-x-6">
-          <Link
-          className="rounded-md bg-pink-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-pink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          href='/songs'
-          >
-            {button.label}
-          </Link>
+    <>
+      <div
+        style={{ boxSizing: "border-box" }}
+        className="hero min-h-screen bg-base-200"
+      >
+        <div className="hero-content text-center">
+          <div>
+            <article className="prose lg:prose-xl">
+              <h1>
+                Holissssssssss. <span className={style.wave}>👋🏼</span>
+              </h1>
+            </article>
+            <div className="mt-12 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:space-y-0">
+              <div className="group relative">
+                <div
+                  style={{
+                    padding: "10px 20px 30px 20px",
+                    boxSizing: "border-box",
+                  }}
+                  className="relative w-full overflow-hidden rounded-lg bg-base-300"
+                >
+                  <div>
+                    <article className="prose lg:prose-md">
+                      <p style={{ margin: "10px 0", fontWeight: "400" }}>
+                        Esto falta para tu cumple 🥳
+                      </p>
+                    </article>
+                    <Countdown timeLeft={birthdayCountdown} />
+                  </div>
+                </div>
+              </div>
+              <div className="group relative">
+                <div
+                  style={{
+                    padding: "10px 20px 30px 20px",
+                    boxSizing: "border-box",
+                  }}
+                  className="relative w-full overflow-hidden rounded-lg bg-base-300"
+                >
+                  <div>
+                    <article className="prose lg:prose-md">
+                      <p style={{ margin: "10px 0", fontWeight: "400" }}>
+                        Esto falta para los Jonas 🎵
+                      </p>
+                    </article>
+                    <Countdown timeLeft={jbCountdown} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
