@@ -1,18 +1,25 @@
 import Link from "next/link";
 import { FC } from "react";
 import { IHero } from "./components/layout/Hero";
-import { LABEL_GO_BACK_HOME, LABEL_HTTP_404, LABEL_PAGE_NOT_FOUND, LABEL_SORRY_404 } from "@/lib/contansts";
+import {
+  LABEL_GO_BACK_HOME,
+  LABEL_HTTP_404,
+  LABEL_PAGE_NOT_FOUND,
+  LABEL_SORRY_404,
+} from "@/lib/contansts";
 import { paths } from "@/lib/paths";
 
 interface INotFoundPage extends IHero {
   status: number;
-};
+}
 
 const NotFound: FC<INotFoundPage> = () => {
   return (
     <main className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
       <div className="text-center">
-        <p className="text-base font-semibold text-pink-600">{LABEL_HTTP_404}</p>
+        <p className="text-base font-semibold text-pink-600">
+          {LABEL_HTTP_404}
+        </p>
         <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
           {LABEL_PAGE_NOT_FOUND}
         </h1>
