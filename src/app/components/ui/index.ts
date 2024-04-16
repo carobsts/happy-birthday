@@ -6,6 +6,7 @@ import Tab1 from './Tab1';
 import Tab2 from './Tab2';
 import Login from './Login';
 import Building from './Building'; 
+import Dashboard from './Dashboard';
 
 export {
     SearchInput,
@@ -15,5 +16,6 @@ export {
     Tab1,
     Tab2,
     Login,
-    Building
+    Building,
+    Dashboard
 };
