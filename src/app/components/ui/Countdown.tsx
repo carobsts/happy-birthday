@@ -8,7 +8,7 @@ interface ICountdown {
 const Countdown: FC<ICountdown> = ({ timeLeft }) => {
   const value: any = "--value";
   return (
-    <div className="flex items-center justify-center gap-x-6">
+    <div style={{ zIndex: 1 }} className="flex items-center justify-center gap-x-6">
       <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
         <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
           <span className="countdown font-mono text-5xl">

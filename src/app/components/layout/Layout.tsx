@@ -1,4 +1,5 @@
-import { FC, ReactNode } from "react";
+"use client";
+import { FC, ReactNode, useState } from "react";
 import { Balloons } from ".";
 
 interface ILayout {
@@ -7,12 +8,10 @@ interface ILayout {
 
 const Layout: FC<ILayout> = ({ children }) => {
   return (
-    <>
-      <div>
-        <Balloons />
-        {children}
-      </div>
-    </>
+    <div style={{ zIndex: -1 }} className="h-full">
+      <Balloons />
+      {children}
+    </div>
   );
 };
 

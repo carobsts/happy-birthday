@@ -1,21 +1,13 @@
 "use client";
 import React, { useState, useEffect, FC } from "react";
 import style from "../../styles/home.module.css";
-import { Countdown } from "../ui";
+import { Countdown, Login } from "../ui";
 import { calculateTimeLeft } from "@/lib/helpers";
+import Link from "next/link";
 
-export interface IHero {
-  title: string;
-  description: string;
-  button: {
-    label: string;
-    action?: () => void;
-  };
-}
+export interface IHero {}
 
-const Hero: FC<IHero> = (props: IHero) => {
-  const { title, description, button } = props;
-
+const Hero: FC<IHero> = () => {
   const [birthdayCountdown, setBirthdayCountdown] = useState(
     calculateTimeLeft("April 11, 2024 00:00:00")
   );
@@ -40,10 +32,10 @@ const Hero: FC<IHero> = (props: IHero) => {
   return (
     <>
       <div
-        style={{ boxSizing: "border-box" }}
-        className="hero min-h-screen bg-base-200"
+        className="h-full"
+        style={{ boxSizing: "border-box", width: "90%", margin: "auto", display: "flex", justifyContent: "center", alignItems: "center" }}
       >
-        <div className="hero-content text-center">
+        <div className="text-center">
           <div>
             <article className="prose lg:prose-xl">
               <h1>
@@ -61,7 +53,7 @@ const Hero: FC<IHero> = (props: IHero) => {
                 >
                   <div>
                     <article className="prose lg:prose-md">
-                      <p style={{ margin: "10px 0", fontWeight: "400" }}>
+                      <p style={{ margin: "10px 0", fontWeight: "400", color: "black" }}>
                         Esto falta para tu cumple 🥳
                       </p>
                     </article>
@@ -79,7 +71,7 @@ const Hero: FC<IHero> = (props: IHero) => {
                 >
                   <div>
                     <article className="prose lg:prose-md">
-                      <p style={{ margin: "10px 0", fontWeight: "400" }}>
+                      <p style={{ margin: "10px 0", fontWeight: "400", color: "black" }}>
                         Esto falta para los Jonas 🎵
                       </p>
                     </article>
@@ -88,6 +80,7 @@ const Hero: FC<IHero> = (props: IHero) => {
                 </div>
               </div>
             </div>
+            <Login/>
           </div>
         </div>
       </div>
