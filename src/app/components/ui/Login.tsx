@@ -71,7 +71,7 @@ const Login: FC<{}> = () => {
             >
               <div>
                 <Link
-                  href={handleSingIn() ? '/dashboard?tab=' : '/'}
+                  href={handleSingIn() ? '/dashboard?tab=1' : '/'}
                   className="btn w-200 btn-accent group relative inline-flex items-center justify-center overflow-hidden rounded-md px-6 font-medium text-black duration-500"
                 >
                   <div className="translate-x-0 opacity-100 transition group-hover:-translate-x-[150%] group-hover:opacity-0">
